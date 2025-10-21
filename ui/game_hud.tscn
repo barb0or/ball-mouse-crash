@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://doxf8t3vqsntr"]
+
+[ext_resource type="Script" uid="uid://d236x04lor508" path="res://ui/game_hud.gd" id="1_io01e"]
+[ext_resource type="Texture2D" uid="uid://bo2i7wg2uc5u" path="res://ui/background (1).png" id="2_5bps4"]
+[ext_resource type="Script" uid="uid://cfpadt5b5h7ft" path="res://ui/game_over_screen.gd" id="3_5bps4"]
+[ext_resource type="Texture2D" uid="uid://c6eivbxrkysb2" path="res://ui/you lose.png" id="3_trchv"]
+[ext_resource type="Texture2D" uid="uid://bpo2gm4hdar7b" path="res://ui/button.png" id="5_agb43"]
+[ext_resource type="Texture2D" uid="uid://b83xm3wcff8in" path="res://ui/button (2).png" id="6_j6ylf"]
+[ext_resource type="FontFile" uid="uid://dvn6uyfqomqku" path="res://ui/ZeroCool.ttf" id="7_j6ylf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5bps4"]
+content_margin_left = 80.0
+content_margin_top = 50.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_5bps4"]
+font = ExtResource("7_j6ylf")
+font_size = 60
+
+[node name="GameHUD" type="CanvasLayer"]
+layer = -1
+script = ExtResource("1_io01e")
+
+[node name="Background color" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.10980392, 0.13333334, 1)
+
+[node name="GameOverScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_5bps4")
+
+[node name="YouLose" type="TextureRect" parent="GameOverScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -475.0
+offset_top = -479.0
+offset_right = 475.0
+offset_bottom = 471.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_trchv")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(9.875224, 5.6395836, 6.7690864, 0.09019608)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5bps4")
+expand_mode = 1
+
+[node name="RestartButton" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = 232.5
+offset_right = 225.0
+offset_bottom = 451.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_agb43")
+texture_pressed = ExtResource("6_j6ylf")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 269.0
+offset_bottom = 119.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5bps4")
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_5bps4")

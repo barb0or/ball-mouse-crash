@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://xi0kvsaig6na"]
+
+[ext_resource type="Script" uid="uid://cfpadt5b5h7ft" path="res://ui/game_over_screen.gd" id="1_dcpkc"]
+
+[node name="GameOverScreen" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -17.5
+offset_right = 4.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dcpkc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="FinalScoreLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Over. Final Score: 0"
+
+[node name="RestartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Restart"

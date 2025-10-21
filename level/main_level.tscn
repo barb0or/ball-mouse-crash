@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5gm5833ih8pp"]
+
+[ext_resource type="Script" uid="uid://1ooqv7idd5dp" path="res://actors/spawn_system.gd" id="1_t1qei"]
+[ext_resource type="PackedScene" uid="uid://doxf8t3vqsntr" path="res://ui/game_hud.tscn" id="2_evyck"]
+
+[node name="MainLevel" type="Node"]
+
+[node name="SpawnSystem" type="Node" parent="."]
+script = ExtResource("1_t1qei")
+
+[node name="GameHUD" parent="." instance=ExtResource("2_evyck")]
